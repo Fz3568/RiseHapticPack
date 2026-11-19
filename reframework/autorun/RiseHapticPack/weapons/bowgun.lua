@@ -1,7 +1,7 @@
 -- Light and Heavy Bowgun (snow.player.LightBowgun / HeavyBowgun). While aiming, R2 has a trigger "break" click; each
 -- R2 press while aiming kicks R2 and the grips (heavy = stronger). Heavy: Wyvernheart / machine-gun fire vibrates R2,
 -- charge levels click. Light: rapid fire and full auto vibrate lighter.
--- UNVERIFIED in game: shots are read from R2 presses while aiming (Rise has no single "shot fired" hook found yet).
+-- Shots are read from R2 presses while aiming.
 local Core = require("RiseHapticPack.core")
 local Drivers = require("RiseHapticPack.drivers")
 local Patterns = require("RiseHapticPack.patterns")

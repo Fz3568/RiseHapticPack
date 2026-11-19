@@ -2,9 +2,7 @@
 -- reframework/data/RiseHapticPack.json.
 local Core = require("RiseHapticPack.core")
 local Drivers = require("RiseHapticPack.drivers")
-local Patterns = require("RiseHapticPack.patterns")
 local PlayerStatus = require("RiseHapticPack.player_status")
-local GraphDump = require("RiseHapticPack.graph_dump")
 
 local Rumble = Drivers.Rumble
 local AdaptiveTrigger = Drivers.AdaptiveTrigger
@@ -195,30 +193,16 @@ function Menu.draw(status)
         mark_changed()
     end
 
-    imgui.text("Controller seen by the game: " .. tostring(status.device_kind or "?") .. " (Steam Input)")
     local bridge = AdaptiveTrigger.bridge
     if status.hardware == "dualsense" then
-        imgui.text(string.format("Adaptive triggers: ACTIVE - %s, sent %s, errors %s", tostring(bridge.status.note),
-            tostring(bridge.status.sent), tostring(bridge.status.errors)))
+        imgui.text("Adaptive triggers: active (" .. tostring(bridge.status.note) .. ")")
     elseif bridge.is_live then
         imgui.text_colored("Adaptive triggers: plugin running, " .. tostring(bridge.status.note) .. " (error "
             .. tostring(bridge.status.last_error) .. ")", 0xFF40C0FF)
     else
-        imgui.text_colored("Adaptive triggers: OFF - reframework/plugins/RiseHapticTrigger.dll is not running.", 0xFF40C0FF)
+        imgui.text_colored("Adaptive triggers: off - reframework/plugins/RiseHapticTrigger.dll is not running.", 0xFF40C0FF)
     end
     imgui.text("Weapon: " .. tostring(status.module and status.module.label or "- (village / menus)"))
-    if status.module and status.module.status then
-        local ok, text = pcall(status.module.status)
-        imgui.text("  " .. tostring(ok and text or "?"))
-    end
-    imgui.text("R2 effect: " .. effect_text(AdaptiveTrigger.current("R")))
-    imgui.text(string.format("Last hit reaction: %s (%d)", tostring(PlayerStatus.status.last_state),
-        PlayerStatus.status.event_count))
-    imgui.text(string.format("Rumble writes: game %d, mod %d%s", Rumble.stats.game_writes, Rumble.stats.mod_writes,
-        Rumble.stats.flush_hook and "" or " (frame fallback)"))
-    local sources = Patterns.Hits.sources
-    imgui.text(string.format("Your hits seen: after-calc %d, result %d, shell-id %d", sources.after_calc,
-        sources.result_enemy, sources.shell_hit_id))
     if status.error_count > 0 then
         imgui.text_colored(string.format("Errors: %d, last: %s", status.error_count, status.last_error), 0xFF4040FF)
     end
@@ -239,23 +223,26 @@ function Menu.draw(status)
     if imgui.button("Test R2 wall (2 s)") then
         status.test_trigger_until = Core.now() + 2.0
     end
-    -- Read-only: writes the loaded motion graph of the current weapon to reframework/data.
-    if imgui.button("Dump motion graph of the current weapon") then
-        local player = Core.master_player()
-        if player and status.module then
-            local ok, result = pcall(GraphDump.dump, player)
-            status.graph_result = ok and result or ("failed: " .. tostring(result))
-        else
-            status.graph_result = "take the weapon into a quest or the training area first"
+
+    if imgui.tree_node("Diagnostics") then
+        imgui.text("Controller seen by the game: " .. tostring(status.device_kind or "?"))
+        imgui.text(string.format("Trigger plugin: %s, reports sent %s, errors %s", tostring(bridge.status.note),
+            tostring(bridge.status.sent), tostring(bridge.status.errors)))
+        if status.module and status.module.status then
+            local ok, text = pcall(status.module.status)
+            imgui.text(tostring(ok and text or "?"))
         end
-    end
-    if status.graph_result then
-        imgui.text("  " .. status.graph_result)
+        imgui.text("R2 effect: " .. effect_text(AdaptiveTrigger.current("R")))
+        imgui.text(string.format("Last hit reaction: %s (%d)", tostring(PlayerStatus.status.last_state),
+            PlayerStatus.status.event_count))
+        imgui.text(string.format("Rumble writes: game %d, mod %d%s", Rumble.stats.game_writes, Rumble.stats.mod_writes,
+            Rumble.stats.flush_hook and "" or " (frame fallback)"))
+        imgui.tree_pop()
     end
 
     if imgui.tree_node("Trigger lab (R2)") then
-        local c
-        c, lab.enabled = imgui.checkbox("Play this effect on R2 instead of the weapon's", lab.enabled)
+        local _
+        _, lab.enabled = imgui.checkbox("Play this effect on R2 instead of the weapon's", lab.enabled)
         slider("power", lab, "power", 0.0, 1.0)
         slider("frequency", lab, "frequency", 0.0, 1.0)
         slider("start position", lab, "start", 0.0, 1.0)

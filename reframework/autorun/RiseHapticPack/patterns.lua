@@ -199,34 +199,23 @@ function ActionRumble.update(context)
     end
 end
 
--- Hits: your attacks landing. Several game paths report a hit on the attacking hunter; hits from shells (delayed
+-- Hits: your attacks landing. Two game paths report a hit on the attacking hunter; hits from shells (delayed
 -- slashes such as the Long Sword Iai counter follow-ups, bowgun ammo...) may skip afterCalcDamage_AttackSide, so the
--- enemy result calc counts too. Hits from several paths in the same frame are one batch (Patterns.take_hit).
--- Each path has its own counter, shown in the menu, to see which ones fire in game.
-local Hits = { pending = 0, master_address = nil, installed = false, total = 0 }
-Hits.sources = { after_calc = 0, result_enemy = 0, shell_hit_id = 0 }
+-- enemy result calc counts too. Hits from both paths in the same frame are one batch (Patterns.take_hit).
+local Hits = { pending = 0, master_address = nil, installed = false }
 Patterns.Hits = Hits
 
-local HIT_PATHS = {
-    { method = "afterCalcDamage_AttackSide", source = "after_calc", counts = true },
-    { method = "calcHitAttackResultForEnemy", source = "result_enemy", counts = true },
-    -- May fire when a shell refreshes its hit id rather than on a hit: counted for the menu only.
-    { method = "onUpdateHitIdHitForShell", source = "shell_hit_id", counts = false },
-}
+local HIT_METHODS = { "afterCalcDamage_AttackSide", "calcHitAttackResultForEnemy" }
 
 function Hits.install()
     if Hits.installed then
         return
     end
     Hits.installed = true
-    for _, path in ipairs(HIT_PATHS) do
-        Core.hook("snow.player.PlayerQuestBase", path.method, function(args)
+    for _, method in ipairs(HIT_METHODS) do
+        Core.hook("snow.player.PlayerQuestBase", method, function(args)
             if Hits.master_address and (sdk.to_int64(args[2]) or 0) == Hits.master_address then
-                Hits.sources[path.source] = Hits.sources[path.source] + 1
-                if path.counts then
-                    Hits.pending = Hits.pending + 1
-                    Hits.total = Hits.total + 1
-                end
+                Hits.pending = Hits.pending + 1
             end
         end)
     end

@@ -281,30 +281,18 @@ function Core.analog_r()
     return value
 end
 
-local device_cache = { next_scan = 0.0, dualsense = nil, kind = nil }
+local device_cache = { next_scan = 0.0, kind = nil }
 
--- Rescans the connected pads every 2 s. Returns the native DualSense device (adaptive triggers) or nil, and the
--- via.hid.DeviceKindDetails name of the last input device ("DualSense", "WindowsXInput"...).
-function Core.scan_devices(now)
+-- via.hid.DeviceKindDetails name of the last input device, refreshed every 2 s. With Steam Input (needed: Rise has
+-- no native DualSense support) this is "WindowsXInput" even for a DualSense.
+function Core.device_kind(now)
     if now < device_cache.next_scan then
-        return device_cache.dualsense, device_cache.kind
+        return device_cache.kind
     end
     device_cache.next_scan = now + 2.0
-    device_cache.dualsense = nil
-    local dualsense_td = Core.type("via.hid.DualSenseDevice")
-    local count = gamepad_call("getConnectingDevicesCount") or 0
-    for index = 0, count - 1 do
-        local device = gamepad_call("getConnectingDevices(System.UInt32)", index)
-        local td = device and device:get_type_definition()
-        if td and dualsense_td and td:is_a(dualsense_td) then
-            device_cache.dualsense = device
-            break
-        end
-    end
-    local last = gamepad_call("get_LastInputDevice")
-    local details = Core.call(last, "get_DeviceKindDetails")
+    local details = Core.call(gamepad_call("get_LastInputDevice"), "get_DeviceKindDetails")
     device_cache.kind = details and Core.enum_name("via.hid.DeviceKindDetails", details) or nil
-    return device_cache.dualsense, device_cache.kind
+    return device_cache.kind
 end
 
 return Core

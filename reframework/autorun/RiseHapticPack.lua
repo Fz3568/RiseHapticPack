@@ -1,9 +1,9 @@
--- Rise Haptic Pack 0.1.0
+-- Rise Haptic Pack 0.2.0
 -- DualSense adaptive triggers + extra rumble patterns for Monster Hunter Rise: Sunbreak (REFramework).
--- Port of "MHWilds Haptic Pack 1.3.0" and "LS Extended DualSense Support 2.3" from MH Wilds' ace / app API to
--- Rise's snow.* API. Rumble patterns go through the game (Steam Input turns them into DualSense haptics); adaptive
--- triggers go through the bundled plugin reframework/plugins/RiseHapticTrigger.dll, which talks to the DualSense
--- directly because Rise only sees Steam Input's XInput pad.
+-- Inspired by "MHWilds Haptic Pack" and "LS Extended DualSense Support" for Monster Hunter Wilds.
+-- Rumble patterns go through the game (Steam Input turns them into DualSense haptics); adaptive triggers go through
+-- the bundled plugin reframework/plugins/RiseHapticTrigger.dll, which talks to the DualSense directly because Rise
+-- only sees Steam Input's XInput pad.
 local Core = require("RiseHapticPack.core")
 local Drivers = require("RiseHapticPack.drivers")
 local Patterns = require("RiseHapticPack.patterns")
@@ -41,8 +41,7 @@ end
 local function on_frame()
     local now = Core.now()
     Menu.save_if_changed(now)
-    local _, device_kind = Core.scan_devices(now)
-    status.device_kind = device_kind
+    status.device_kind = Core.device_kind(now)
     status.hardware = AdaptiveTrigger.is_available() and "dualsense" or "rumble"
 
     if not settings.enabled then
