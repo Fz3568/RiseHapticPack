@@ -161,7 +161,7 @@ function Menu.draw(status)
         apply_globals()
         mark_changed()
     end
-    changed, value = imgui.checkbox("DualSense adaptive triggers", settings.triggers_enabled)
+    changed, value = imgui.checkbox("DualSense adaptive triggers (Long Sword only)", settings.triggers_enabled)
     if changed then
         settings.triggers_enabled = value
         apply_globals()

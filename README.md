@@ -1,7 +1,7 @@
 # Rise Haptic Pack
 
-DualSense **adaptive triggers** and extra **rumble patterns** for *Monster Hunter Rise: Sunbreak* on PC, as a
-REFramework mod. Version 0.2.0.
+DualSense **adaptive triggers** for the Long Sword and extra **rumble patterns** for every weapon in
+*Monster Hunter Rise: Sunbreak* on PC, as a REFramework mod. Version 0.2.0.
 
 Rise has no native DualSense support, so the controller goes through Steam Input and the game can only rumble it. This
 mod adds trigger effects by talking to the DualSense directly through a small bundled plugin, while Steam keeps
@@ -9,7 +9,7 @@ rumble, haptics and lights.
 
 ## Features
 
-**Long Sword** (fully mapped to the game's own move states)
+**Long Sword** (adaptive triggers + rumble; fully mapped to the game's own move states)
 
 | Move | R2 |
 | --- | --- |
@@ -23,17 +23,9 @@ rumble, haptics and lights.
 
 Every Long Sword trigger effect has its own toggle, and the main ones are shortcuts at the top of the menu.
 
-**Other weapons** (first pass, built from the weapons' gauges and flags)
-
-| Weapon | R2 |
-| --- | --- |
-| Great Sword | guard weight in the first 20% of the pull; vibrating wall on a blocked hit |
-| Sword & Shield, Lance, Gunlance, Charge Blade | shield weight while guarding; vibrating wall on a blocked hit |
-| Hammer | wall while charging, a click on each charge level |
-| Bow | draw weight while charging, a pulse per charge level, a kick on release |
-| Light / Heavy Bowgun | trigger click while aiming, a kick per shot, vibration during rapid / auto fire |
-| Dual Blades, Switch Axe, Insect Glaive, Charge Blade | a click on Demon Mode, morphs, Triple Up, phial loads |
-| Hunting Horn | a click when a song is queued |
+**Other weapons** (rumble only; the triggers stay free): first-pass patterns built from each weapon's gauges and
+flags, such as charge levels (Great Sword, Hammer, Bow), guards and guard points (Sword & Shield, Lance, Gunlance,
+Charge Blade), Demon Mode, morphs, phial loads, Triple Up, queued songs, and bowgun shots.
 
 **Rumble** (any controller): charge hums, level-ups, counters, hits and morph patterns per weapon, plus a light
 reaction when you are knocked back, roared at, caught in wind or a tremor, or block a hit. While you are reeling
@@ -65,7 +57,7 @@ To uninstall, delete those files (and `reframework/data/RiseHapticPack*.json|txt
 
 REFramework menu → **Rise Haptic Pack**:
 
-* Enabled, mod rumble strength, adaptive triggers on/off, trigger strength
+* Enabled, mod rumble strength, adaptive triggers on/off (Long Sword only), trigger strength
 * Long Sword shortcuts: Spirit Blade I–III, Spirit Roundslash, Spirit Breaker final hit, Spirit Breaker 3rd hit after
   an Iai counter
 * Status: whether the trigger plugin has the DualSense open, current weapon, errors
@@ -84,7 +76,8 @@ Settings are saved to `reframework/data/RiseHapticPack.json`.
 
 ## Known limitations
 
-* Weapons other than the Long Sword have not been played through with this version; their effects may need tuning.
+* Adaptive triggers are for the Long Sword only. Other weapons get rumble; their patterns have not been played
+  through with this version and may need tuning.
 * Sacred Sheathe and Foresight Slash have no trigger effects of their own yet.
 * Without Steam Input (or without a DualSense) only the rumble part works.
 
