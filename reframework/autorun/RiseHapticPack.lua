@@ -29,6 +29,9 @@ local status = {
 }
 
 local TEST_TRIGGER = { 1.0, 0.0, 0.0, 1.0 }
+-- Adaptive triggers are for these weapon kinds only (Core.weapon_kind: from the hunter's weapon class). Every other
+-- weapon keeps its rumble and R2 stays free.
+local TRIGGER_WEAPONS = { ls = true }
 local context = { now = 0.0, player = nil, kind = nil, hardware = "rumble", r2 = 0.0, hits = 0, player_event = nil }
 
 local function record_error(ok, message)
@@ -77,6 +80,10 @@ local function on_frame()
         PlayerStatus.update(context)
         Patterns.ActionRumble.update(context)
         record_error(pcall(module.update, context))
+        if not TRIGGER_WEAPONS[kind] then
+            AdaptiveTrigger.set("R", AdaptiveTrigger.FREE)
+            AdaptiveTrigger.set("L", AdaptiveTrigger.FREE)
+        end
     else
         PlayerStatus.idle()
         AdaptiveTrigger.set("R", AdaptiveTrigger.FREE)
