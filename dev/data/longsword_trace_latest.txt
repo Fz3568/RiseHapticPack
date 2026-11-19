@@ -1,0 +1,230 @@
+# Long Sword node names (entries)
+    2  wait.main
+    1  run_start.run_start _left
+    1  run_continue.run_continue_main
+    2  atk_start.atk_125
+    1  atk_start.atk_329 - コピー (1)
+   10  atk.atk_104.atk_104.new state 2A60599E
+    1  utsusemi_MR.ustusemi_A_batto
+    1  utsusemi_MR.esc_left
+    4  atk.atk_run_start.atk_run_start_main
+    1  utsusemi_MR.ustusemi_B_batto
+    1  atk.WireReplaceF_MR.plw_LongSword_100_160
+    6  atk.atk_wait.atk_wait_main.atk_wait_main
+    1  atk.atk_321
+    2  atk.atk_106.atk_106.o
+    4  atk.atk_107.atk_107
+    4  atk.atk_107.atk_317b
+    4  atk.atk_107.atk_315
+    7  atk.atk_111.atk_111.new state 4FAA0952
+    4  atk.atk_112.atk_112.new state 9BAB8272
+    1  atk.atk_112.atk_112.非SA
+   12  atk.atk151.atk_156_A
+   12  atk.atk151.atk_156_B
+    8  atk.atk151.atk_152
+   10  atk.atk151.atk_155.new state 277A1BD6
+    6  atk.atk151.atk_155.faled
+    7  atk.esc_front
+    1  atk.atk_106.atk_319
+    4  atk.atk151.atk_155.success
+    1  atk.atk_107.atk_317a
+    1  atk.atk_107.atk_316
+    6  atk.回避→歩きつなぎ.esc_front_f
+    2  atk.atk_run_end.atk_run_end_main
+    2  atk.atk_104.atk_307
+    2  atk.atk_105.atk_105.new state C3253273
+    1  atk.atk_105.atk_311
+    1  atk.atk_103.atk_103.new state 14F8A29
+    1  atk.atk_110.atk_110.o
+    1  atk.atk_110.atk_315
+    2  atk.atk_111.atk_111.非SA
+    2  atk.atk_run_start.atk_run_start_right
+    2  atk.atk151.atk_154
+    1  atk.atk_105_1.atk_105_1.new state 623AB7BA
+    1  atk.atk_105_1.atk_328
+    1  atk.atk_105_1.atk_315
+    1  damage.large_f.plc_Damage_001_015
+    1  damage.large_f.main
+    1  damage.large_f.damage_large_f_standup_wpon
+    1  atk.atk_112.atk_300
+    1  atk.atk_107.atk_329
+    1  damage.large_b.plc_Damage_001_021
+    1  damage.large_b.plc_Damage_001_022
+    1  damage.large_b.damage_large_b_standup_wpon
+    1  wp_off_move
+    1  dash_continue.dash_main.escape_dash_main
+    1  dash_end.dash_end_right
+
+# Events
+2288.71 node atk_start.atk_125  part=nil  r2=0.00  level=1  gp=0
+2290.18 node atk_start.atk_329 - コピー (1)  part=nil  r2=0.00  level=1  gp=0
+2290.51 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=1  gp=0
+2293.60 node atk.atk_run_start.atk_run_start_main  part=nil  r2=0.00  level=0  gp=0
+2295.39 node atk.WireReplaceF_MR.plw_LongSword_100_160  part=nil  r2=0.00  level=0  gp=0
+2295.39 follow-up shell (shell020 0, spacing 1)
+2298.15 node atk.atk_wait.atk_wait_main.atk_wait_main  part=nil  r2=0.00  level=0  gp=0
+2298.16 node atk.atk_run_start.atk_run_start_main  part=nil  r2=0.00  level=0  gp=0
+2298.63 node atk.atk_321  part=nil  r2=0.16  level=0  gp=0
+2299.37 node atk.atk_106.atk_106.o  part=nil  r2=0.00  level=0  gp=0
+2299.72 node atk.atk_107.atk_107  part=nil  r2=1.00  level=0  gp=0
+2300.67 node atk.atk_107.atk_317b  part=nil  r2=1.00  level=0  gp=0
+2300.67 spirit breaker 3rd hit  trigger=false
+2300.93 node atk.atk_107.atk_315  part=nil  r2=0.00  level=0  gp=0
+2301.23 node atk.atk_111.atk_111.new state 4FAA0952  part=nil  r2=0.00  level=0  gp=0
+2301.79 node atk.atk_112.atk_112.new state 9BAB8272  part=nil  r2=1.00  level=0  gp=0
+2301.79 spirit breaker final hit  trigger=true
+2304.96 node atk.atk_112.atk_112.非SA  part=nil  r2=0.00  level=1  gp=0
+2305.73 node atk.atk_wait.atk_wait_main.atk_wait_main  part=nil  r2=0.00  level=1  gp=0
+2309.80 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=1  gp=0
+2310.40 node atk.atk151.atk_156_A  part=sheathe  r2=0.81  level=1  gp=0
+2311.06 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=1  gp=0
+2311.43 node atk.atk151.atk_152  part=stance  r2=0.00  level=1  gp=0
+2312.24 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.14  level=1  gp=0
+2312.24 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2312.53 node atk.atk151.atk_155.faled  part=spirit_slash  r2=0.00  level=1  gp=0
+2314.20 node atk.esc_front  part=nil  r2=0.00  level=1  gp=0
+2314.73 node atk.atk_106.atk_319  part=nil  r2=1.00  level=1  gp=0
+2315.55 node atk.atk_106.atk_106.o  part=nil  r2=0.00  level=1  gp=0
+2316.03 node atk.atk151.atk_156_A  part=sheathe  r2=0.87  level=1  gp=0
+2316.69 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=1  gp=0
+2317.06 node atk.atk151.atk_152  part=stance  r2=0.00  level=1  gp=0
+2318.28 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.13  level=1  gp=0
+2318.28 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2318.57 node atk.atk151.atk_155.success  part=spirit_slash  r2=0.00  level=1  gp=0
+2318.57 counter success (success node) node=atk.atk151.atk_155.success
+2318.71 follow-up shell (shell020 1, spacing 0)
+2320.37 node atk.atk_107.atk_317a  part=nil  r2=1.00  level=2  gp=0
+2320.37 spirit breaker 3rd hit (from Iai counter)  trigger=true
+2320.63 node atk.atk_107.atk_316  part=nil  r2=0.00  level=2  gp=0
+2321.20 node atk.atk_111.atk_111.new state 4FAA0952  part=nil  r2=0.00  level=2  gp=0
+2321.65 node atk.atk_112.atk_112.new state 9BAB8272  part=nil  r2=1.00  level=2  gp=0
+2321.65 spirit breaker final hit  trigger=true
+2324.34 node atk.esc_front  part=nil  r2=0.00  level=3  gp=0
+2324.87 node atk.回避→歩きつなぎ.esc_front_f  part=nil  r2=0.00  level=3  gp=0
+2325.46 node atk.atk_run_end.atk_run_end_main  part=nil  r2=0.00  level=3  gp=0
+2325.54 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2326.81 node atk.atk_104.atk_307  part=nil  r2=0.00  level=3  gp=0
+2327.18 node atk.atk_105.atk_105.new state C3253273  part=nil  r2=0.00  level=3  gp=0
+2327.84 node atk.atk_105.atk_311  part=nil  r2=0.00  level=3  gp=0
+2328.17 node atk.atk_103.atk_103.new state 14F8A29  part=nil  r2=0.00  level=3  gp=0
+2329.24 node atk.atk_110.atk_110.o  part=nil  r2=1.00  level=3  gp=0
+2330.35 node atk.atk_110.atk_315  part=nil  r2=1.00  level=3  gp=0
+2330.35 spirit breaker 3rd hit  trigger=false
+2330.91 node atk.atk_111.atk_111.new state 4FAA0952  part=nil  r2=0.00  level=3  gp=0
+2332.37 node atk.atk_111.atk_111.非SA  part=nil  r2=0.00  level=3  gp=0
+2333.13 node atk.atk_wait.atk_wait_main.atk_wait_main  part=nil  r2=0.00  level=3  gp=0
+2333.14 node atk.atk_run_start.atk_run_start_main  part=nil  r2=0.00  level=3  gp=0
+2333.30 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2334.07 node atk.atk_104.atk_307  part=nil  r2=0.00  level=3  gp=0
+2334.44 node atk.atk_105.atk_105.new state C3253273  part=nil  r2=0.00  level=3  gp=0
+2334.94 node atk.atk151.atk_156_A  part=sheathe  r2=0.87  level=3  gp=0
+2335.60 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2335.97 node atk.atk151.atk_152  part=stance  r2=0.00  level=3  gp=0
+2336.24 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.13  level=3  gp=0
+2336.24 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2336.54 node atk.atk151.atk_155.success  part=spirit_slash  r2=0.00  level=3  gp=0
+2336.54 counter success (success node) node=atk.atk151.atk_155.success
+2336.55 follow-up shell (shell020 1, spacing 0)
+2338.22 node atk.atk_107.atk_317b  part=nil  r2=1.00  level=3  gp=0
+2338.22 spirit breaker 3rd hit (from Iai counter)  trigger=true
+2338.48 node atk.atk_107.atk_315  part=nil  r2=0.00  level=3  gp=0
+2338.78 node atk.atk_111.atk_111.new state 4FAA0952  part=nil  r2=0.00  level=3  gp=0
+2340.15 node atk.atk151.atk_156_A  part=sheathe  r2=1.00  level=3  gp=0
+2340.81 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2341.18 node atk.atk151.atk_152  part=stance  r2=0.00  level=3  gp=0
+2341.93 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.12  level=3  gp=0
+2341.93 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2342.23 node atk.atk151.atk_155.faled  part=spirit_slash  r2=0.00  level=3  gp=0
+2344.98 node atk.atk_wait.atk_wait_main.atk_wait_main  part=nil  r2=0.00  level=3  gp=0
+2344.99 node atk.atk_run_start.atk_run_start_right  part=nil  r2=0.00  level=3  gp=0
+2345.25 node atk.atk_run_end.atk_run_end_main  part=nil  r2=0.00  level=3  gp=0
+2345.29 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2346.70 node atk.atk151.atk_156_A  part=sheathe  r2=1.00  level=3  gp=0
+2347.37 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2347.52 node atk.atk151.atk_154  part=iai_slash  r2=0.00  level=3  gp=0
+2348.77 node atk.atk_107.atk_107  part=nil  r2=1.00  level=3  gp=0
+2349.57 node atk.atk_105_1.atk_105_1.new state 623AB7BA  part=nil  r2=0.00  level=3  gp=0
+2350.40 node atk.atk_105_1.atk_328  part=nil  r2=1.00  level=3  gp=0
+2350.72 node atk.atk_105_1.atk_315  part=nil  r2=0.00  level=3  gp=0
+2350.72 spirit breaker 3rd hit  trigger=false
+2350.97 node atk.atk_111.atk_111.new state 4FAA0952  part=nil  r2=0.00  level=3  gp=0
+2352.36 node atk.atk_111.atk_111.非SA  part=nil  r2=0.00  level=3  gp=0
+2353.13 node atk.atk_wait.atk_wait_main.atk_wait_main  part=nil  r2=0.00  level=3  gp=0
+2353.13 node atk.atk_run_start.atk_run_start_right  part=nil  r2=0.00  level=3  gp=0
+2353.20 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2353.83 node atk.atk151.atk_156_A  part=sheathe  r2=1.00  level=3  gp=0
+2354.49 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2354.86 node atk.atk151.atk_152  part=stance  r2=0.00  level=3  gp=0
+2355.78 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.15  level=3  gp=0
+2355.78 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2356.08 node atk.atk151.atk_155.success  part=spirit_slash  r2=0.00  level=3  gp=0
+2356.08 counter success (success node) node=atk.atk151.atk_155.success
+2356.10 follow-up shell (shell020 1, spacing 0)
+2357.82 node atk.atk_107.atk_317b  part=nil  r2=1.00  level=3  gp=0
+2357.82 spirit breaker 3rd hit (from Iai counter)  trigger=true
+2358.08 node atk.atk_107.atk_315  part=nil  r2=0.00  level=3  gp=0
+2358.38 node atk.atk_111.atk_111.new state 4FAA0952  part=nil  r2=0.00  level=3  gp=0
+2359.13 node atk.atk_112.atk_112.new state 9BAB8272  part=nil  r2=1.00  level=3  gp=0
+2359.13 spirit breaker final hit  trigger=true
+2361.13 node atk.atk151.atk_156_A  part=sheathe  r2=0.97  level=3  gp=0
+2361.79 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2362.05 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.13  level=3  gp=0
+2362.05 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2362.35 node atk.atk151.atk_155.faled  part=spirit_slash  r2=0.00  level=3  gp=0
+2363.91 node atk.esc_front  part=nil  r2=0.00  level=3  gp=0
+2364.45 node atk.回避→歩きつなぎ.esc_front_f  part=nil  r2=0.00  level=3  gp=0
+2364.69 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2365.60 node atk.atk151.atk_156_A  part=sheathe  r2=1.00  level=3  gp=0
+2366.26 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2366.62 node atk.atk151.atk_152  part=stance  r2=0.00  level=3  gp=0
+2367.53 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.13  level=3  gp=0
+2367.53 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2367.83 node atk.atk151.atk_155.faled  part=spirit_slash  r2=0.00  level=3  gp=0
+2367.84 node damage.large_f.plc_Damage_001_015  part=nil  r2=0.00  level=3  gp=0
+2370.11 node atk.esc_front  part=nil  r2=0.00  level=3  gp=0
+2370.64 node atk.回避→歩きつなぎ.esc_front_f  part=nil  r2=0.00  level=3  gp=0
+2371.44 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2372.08 node atk.atk151.atk_156_A  part=sheathe  r2=1.00  level=3  gp=0
+2372.74 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2372.87 node atk.atk151.atk_154  part=iai_slash  r2=0.00  level=3  gp=0
+2374.09 node atk.atk_107.atk_107  part=nil  r2=1.00  level=3  gp=0
+2374.98 node atk.atk_107.atk_317b  part=nil  r2=1.00  level=3  gp=0
+2374.98 spirit breaker 3rd hit  trigger=false
+2375.24 node atk.atk_107.atk_315  part=nil  r2=0.56  level=3  gp=0
+2375.54 node atk.atk_111.atk_111.new state 4FAA0952  part=nil  r2=0.29  level=3  gp=0
+2375.95 node atk.atk_112.atk_112.new state 9BAB8272  part=nil  r2=1.00  level=3  gp=0
+2375.95 spirit breaker final hit  trigger=true
+2378.30 node atk.atk_112.atk_300  part=nil  r2=0.00  level=3  gp=0
+2379.01 node atk_start.atk_125  part=nil  r2=0.00  level=3  gp=0
+2380.24 node atk.atk_107.atk_329  part=nil  r2=1.00  level=3  gp=0
+2380.85 node atk.atk_107.atk_107  part=nil  r2=0.00  level=3  gp=0
+2381.28 node atk.atk151.atk_156_A  part=sheathe  r2=1.00  level=3  gp=0
+2381.94 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2382.31 node atk.atk151.atk_152  part=stance  r2=0.00  level=3  gp=0
+2382.38 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.14  level=3  gp=0
+2382.38 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2382.68 node atk.atk151.atk_155.faled  part=spirit_slash  r2=0.78  level=3  gp=0
+2382.82 node damage.large_b.plc_Damage_001_021  part=nil  r2=0.00  level=3  gp=0
+2385.13 node atk.esc_front  part=nil  r2=0.00  level=3  gp=0
+2385.66 node atk.回避→歩きつなぎ.esc_front_f  part=nil  r2=0.00  level=3  gp=0
+2386.11 node atk.esc_front  part=nil  r2=0.00  level=3  gp=0
+2386.64 node atk.回避→歩きつなぎ.esc_front_f  part=nil  r2=0.00  level=3  gp=0
+2387.21 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2387.84 node atk.atk151.atk_156_A  part=sheathe  r2=0.94  level=3  gp=0
+2388.50 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2388.60 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.16  level=3  gp=0
+2388.60 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2388.90 node atk.atk151.atk_155.success  part=spirit_slash  r2=0.00  level=3  gp=0
+2388.90 counter success (success node) node=atk.atk151.atk_155.success
+2388.91 follow-up shell (shell020 1, spacing 0)
+2391.88 node atk.atk_wait.atk_wait_main.atk_wait_main  part=nil  r2=0.00  level=3  gp=0
+2391.89 node atk.atk_run_start.atk_run_start_main  part=nil  r2=0.00  level=3  gp=0
+2392.30 node atk.atk_104.atk_104.new state 2A60599E  part=nil  r2=0.00  level=3  gp=0
+2393.40 node atk.atk151.atk_156_A  part=sheathe  r2=1.00  level=3  gp=0
+2394.06 node atk.atk151.atk_156_B  part=stance  r2=0.00  level=3  gp=0
+2394.43 node atk.atk151.atk_152  part=stance  r2=0.00  level=3  gp=0
+2394.65 node atk.atk151.atk_155.new state 277A1BD6  part=spirit_slash  r2=0.13  level=3  gp=0
+2394.65 iai spirit slash (spirit slash node) node=atk.atk151.atk_155.new state 277A1BD6
+2394.95 node atk.atk151.atk_155.faled  part=spirit_slash  r2=0.00  level=3  gp=0
+2396.94 node atk.esc_front  part=nil  r2=0.00  level=3  gp=0
+2397.47 node atk.回避→歩きつなぎ.esc_front_f  part=nil  r2=0.00  level=3  gp=0

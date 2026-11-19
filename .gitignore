@@ -1,0 +1,12 @@
+# Build and test outputs
+*.exe
+*.o
+__pycache__/
+*.pyc
+
+# Files the mod, the plugin and the tests write at runtime
+RiseHapticPack_trigger.txt
+RiseHapticPack_bridge.txt
+RiseHapticPack_ls_trace.txt
+RiseHapticPack_motion_graph.txt
+RiseHapticPack.json
